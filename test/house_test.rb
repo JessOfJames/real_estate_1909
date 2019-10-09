@@ -23,9 +23,14 @@ class HouseTest < Minitest::Test
   end
 
   def test_it_has_rooms
+    @rooms.select { |@rooms| @house.add_room }
+  end
+
+  def test_it_has_rooms
+    skip
     assert_equal @rooms, @house.rooms
     @house.add_room(@room_1)
-    
+
     @house.add_room(@room_2)
   end
 
