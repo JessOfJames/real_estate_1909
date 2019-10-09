@@ -2,11 +2,12 @@ require './lib/room.rb'
 require 'minitest/pride'
 require 'minitest/autorun'
 
-class RoomTest < Minitest::Room
+class RoomTest < Minitest::Test
   def setup
     @room = Room.new(:bedroom, 10, 13)
-end
+  end
 
-def test_it_exists
-  assert_instance_of Room, room
+  def test_it_exists
+    assert_instance_of Room, @room
+  end
 end
