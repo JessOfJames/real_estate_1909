@@ -22,12 +22,9 @@ class HouseTest < Minitest::Test
     assert_equal "123 sugar lane", @house.address
   end
 
-  def test_it_has_a_room
-    assert_equal @room_1, @house.rooms
-  end
-
   def test_it_has_rooms
-    assert_equal @rooms, @house.add_room
-
+    assert_equal @rooms, @house.add_room[@room_1]
+    assert_equal @rooms, @house.add_room[@room_2]
   end
+
 end
