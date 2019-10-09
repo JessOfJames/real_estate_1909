@@ -6,6 +6,8 @@ require 'minitest/autorun'
 class HouseTest < Minitest::Test
   def setup
     @house = House.new("$400000", "123 sugar lane")
+    @room_1 = Room.new(:bedroom, 10, 13)
+    @room_2 = Room.new(:bedroom, 11, 15)
   end
 
   def test_it_exists
@@ -20,4 +22,12 @@ class HouseTest < Minitest::Test
     assert_equal "123 sugar lane", @house.address
   end
 
+  def test_it_has_a_room
+    assert_equal @room_1, @house.rooms
+  end
+
+  def test_it_has_rooms
+    assert_equal @rooms, @house.add_room
+
+  end
 end
